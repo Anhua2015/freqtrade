@@ -38,7 +38,13 @@
                 "ms-azuretools.vscode-docker",
                 "vscode-icons-team.vscode-icons",
                 "github.vscode-github-actions",
+                "Vizards.deepseek-v4-for-copilot"
             ],
         }
-    }
+    },
+    "containerEnv": {
+    "HTTP_PROXY": "http://host.docker.internal:7897",
+    "HTTPS_PROXY": "http://host.docker.internal:7897",
+    "ALL_PROXY": "socks5://host.docker.internal:7897"
+  }
 }
