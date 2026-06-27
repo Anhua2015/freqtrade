@@ -3,7 +3,7 @@
     "image": "ghcr.io/freqtrade/freqtrade-devcontainer:latest",
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [
-        8080
+        18080
     ],
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/freqtrade,type=bind,consistency=cached",
     // Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
@@ -43,8 +43,10 @@
         }
     },
     "containerEnv": {
-    "HTTP_PROXY": "http://host.docker.internal:7897",
-    "HTTPS_PROXY": "http://host.docker.internal:7897",
-    "ALL_PROXY": "socks5://host.docker.internal:7897"
-  }
+        "HTTP_PROXY": "http://host.docker.internal:7897",
+        "HTTPS_PROXY": "http://host.docker.internal:7897",
+        "ALL_PROXY": "socks5://host.docker.internal:7897",
+        "NO_PROXY": "localhost,127.0.0.1,0.0.0.0,::1,host.docker.internal",
+        "no_proxy": "localhost,127.0.0.1,0.0.0.0,::1,host.docker.internal"
+    }
 }
